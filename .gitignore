@@ -1,0 +1,4 @@
+.env
+AWSCLIV2.pkg
+node_modules
+.aws/
