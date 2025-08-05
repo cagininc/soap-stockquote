@@ -6,6 +6,18 @@ A Node.js based SOAP API that fetches real-time stock quotes by integrating with
 - AWS Lambda functions provide serverless, scalable compute resources.
 - API Gateway exposes Lambda functions as HTTP endpoints.
 - The serverless.yml file configures deployment and endpoint settings.
+ ## 🛠️ Architecture
+
+The SOAP API is deployed as a **serverless function** using the Serverless Framework on AWS. Here's how the architecture works:
+
+- **AWS API Gateway** acts as the public-facing HTTP endpoint. It accepts incoming `POST` requests with SOAP payloads (`Content-Type: text/xml`).
+- The request is forwarded to an **AWS Lambda** function, where an Express.js server parses the SOAP request, fetches stock data from Alpha Vantage, and generates a SOAP-compliant XML response.
+- API Gateway then returns this XML response back to the requester.
+
+This setup allows for:
+- Fully serverless, auto-scaling deployment
+- Easy monitoring via **CloudWatch Logs and Metrics**
+- Public access to a **SOAP-compliant HTTP endpoint** without maintaining any servers
 
 Sensitive API keys are managed securely via .env files and excluded from version control.
 ---
