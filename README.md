@@ -33,22 +33,21 @@ Sensitive API keys are managed securely via .env files and excluded from version
 ---
 ## Project Structure
 src/
-├── index.ts              # Express sunucusunu başlatır ve Serverless handler'ını export eder
-├── routes/
-│   └── soap.ts           # SOAP endpoint'leri burada tanımlanır, istekler işlenir
+├── index.ts             
+│   └── soap.ts         
 ├── services/
 │   └── alphaVantageService.ts  # Alpha Vantage REST API'dan hisse senedi verisi çeken servis
 ├── utils/
-│   └── jsonToXml.ts      # JSON veriyi XML formatına dönüştüren yardımcı fonksiyon
-.env                      # Gizli API anahtarlarının saklandığı ortam değişkenleri dosyası
-serverless.yml            # AWS Lambda’ya deployment için Serverless Framework yapılandırması
+│   └── jsonToXml.ts      
+.env                      
+serverless.yml            
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js (>=16)
-- npm or yarn
+- npm 
 - Alpha Vantage API key (register free at https://www.alphavantage.co)
 
 ### Installation
